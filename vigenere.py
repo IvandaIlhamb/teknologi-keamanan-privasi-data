@@ -22,7 +22,7 @@ def deskripsi(enkripsi_teks, key):
     orig_text.append(chr(x)) 
   return("" . join(orig_text)) 
 if __name__ == "__main__": 
-  teks = input("Masukkan Teks: ")
+  teks = input("Masukkan teks: ")
   keyword = "199"
   print("Key: ", keyword)
   key = generateKey(teks, keyword) 

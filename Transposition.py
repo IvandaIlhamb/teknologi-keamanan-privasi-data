@@ -15,8 +15,8 @@ for r in range(row):
     matrix[r][c] = ch
   t += len_key
 
-
-sort_order = sorted([(ch,i) for i,ch in enumerate(key)])  #Membuat urutan abjad
+#Membuat urutan abjad
+sort_order = sorted([(ch,i) for i,ch in enumerate(key)])  
 
 
 cipher_text = ''
@@ -25,5 +25,5 @@ for ch,c in sort_order:
     cipher_text += matrix[r][c]
 
 print("Encryption")
-print("Plain text :",plain_text)
-print("Cipher text :",cipher_text)
+print("Plain Text :",plain_text)
+print("Cipher Text :",cipher_text)

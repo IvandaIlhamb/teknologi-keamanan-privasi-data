@@ -3,7 +3,7 @@
 import string
 
 
-# Daftar yang berisi semua karakter
+# Daftar berisi semua karakter
 data = string.ascii_letters
 
 
@@ -21,7 +21,7 @@ for i in range(len(data)):
 	dict1[data[i]] = data[(i+key)%len(data)]
 
 
-plain_text= input("Masukkan Teks : ")
+plain_text= input("Masukkan teks : ")
 cipher_text=[]
 
 # loop to generate ciphertext
@@ -37,12 +37,6 @@ for char in plain_text:
 cipher_text= "".join(cipher_text)
 print("Cipher Text : ",cipher_text)
 
-
-"""
-Buat kamus untuk menyimpan substitusi
-untuk alfabet yang diberikan dalam sandi
-teks berdasarkan kunci
-"""
 
 
 dict2 = {}	
