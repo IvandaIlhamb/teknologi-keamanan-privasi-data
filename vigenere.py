@@ -6,7 +6,7 @@ def generateKey(teks, key):
     for i in range(len(teks) -len(key)): 
       key.append(key[i % len(key)]) 
   return("" . join(key)) 
-
+  
 def enkripsi(teks, key): 
   enkripsi_teks = [] 
   for i in range(len(teks)): 
@@ -14,7 +14,7 @@ def enkripsi(teks, key):
     x += ord('A') 
     enkripsi_teks.append(chr(x)) 
   return("" . join(enkripsi_teks)) 
-def deskripsi(enkripsi_teks, key): 
+def dekripsi(enkripsi_teks, key): 
   orig_text = [] 
   for i in range(len(enkripsi_teks)): 
     x = (ord(enkripsi_teks[i]) -ord(key[i]) + 26) % 26
@@ -22,10 +22,10 @@ def deskripsi(enkripsi_teks, key):
     orig_text.append(chr(x)) 
   return("" . join(orig_text)) 
 if __name__ == "__main__": 
-  teks = input("Masukkan teks: ")
+  teks = input("Masukkan Teks: ")
   keyword = "199"
   print("Key: ", keyword)
   key = generateKey(teks, keyword) 
   enkripsi_teks = enkripsi(teks,key) 
   print("Encrypted message:", enkripsi_teks) 
-  print("Decrypted message:", deskripsi(enkripsi_teks, key))
+  print("Decrypted message:", dekripsi(enkripsi_teks, key)) 

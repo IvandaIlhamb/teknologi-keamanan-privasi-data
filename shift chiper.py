@@ -1,27 +1,24 @@
-def encrypt_text(plaintext,n):
-    ans = ""
-    # iterate over the given text
+def enkripsi_text(plaintext,shift):
+    hasil = " "
+
     for i in range(len(plaintext)):
-        ch = plaintext[i]
+        huruf = plaintext[i]
+        
+        if huruf==" ":
+            hasil+=" "
+        # Untuk memeriksa karakter huruf besar kemudian melakukan enkripsi
+        elif (huruf.isupper()):
+            hasil += chr((ord(huruf) + shift-65) % 26 + 65)
 
-        # check if space is there then simply add space
-        if ch==" ":
-            ans+=" "
-        # check if a character is uppercase then encrypt it accordingly 
-        elif (ch.isupper()):
-            ans += chr((ord(ch) + n-65) % 26 + 65)
-        # check if a character is lowercase then encrypt it accordingly
-
+        # Untuk memeriksa karakter huruf kecil kemudian melakukan enkripsi
         else:
-            ans += chr((ord(ch) + n-97) % 26 + 97)
+            hasil += chr((ord(huruf) + shift-97) % 26 + 97)
+    
+    return hasil
 
-    return ans
-
-plaintext = input("Masukkan Teks :")
-n = 99
+plaintext = input("Masukkan Teks : ")
+#NIM 199
+shift = 9
 print("Plain Text : " + plaintext)
-print("Shift : " + str(n))
-print("Enkripsi Teks : " + encrypt_text(plaintext,n))
-
-if __name__ == "main":
-    main()
+print("Shift : " + str(shift))
+print("Enkripsi Teks : " + enkripsi_text(plaintext,shift))
